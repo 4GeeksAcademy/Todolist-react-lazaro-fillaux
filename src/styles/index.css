@@ -1,11 +1,77 @@
-/* 
+.todo {
+    background-color: aliceblue;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
 
-    You can write your own styles here...
-    
-    
-    ...Or you can use the import command to include 
-    other sylesheets into your bunde as well, e.j:
-    
-    import 'relative/path/to/stylesheet.scss';
+.todo1 {
+    display: flex;
+    flex-direction: column;
 
-*/
+
+}
+
+.TODOINPUT {
+    width: 100;
+    height: 20;
+}
+
+.TODOLIST {
+    /* flex: display: flex; */
+    display: flex;
+
+    /* flex-col: flexDirection: column; */
+    flex-direction: column;
+
+    /* mt-7: margin-top: 1.75rem; */
+    /* Nota: 'mt-7' no es una utilidad por defecto de la escala de espaciado de Tailwind.
+       Se asume una configuración personalizada o un valor aproximado.
+       En la escala por defecto de Tailwind, 'mt-6' es 1.5rem y 'mt-8' es 2rem.
+       Usaremos el valor estándar para 'mt-7' si estuviera disponible (1.75rem). */
+    margin-top: 1.75rem;
+
+    /* rounded-lg: border-radius: 0.5rem; */
+    border-radius: 0.5rem;
+
+    /* overflow-hidden: overflow: hidden; */
+    overflow: hidden;
+
+    /* shadow-2xl: Crea una sombra grande y suave. */
+    /* El valor exacto es complejo, pero este es el equivalente aproximado de CSS: */
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+
+
+}
+
+.TODO {
+    /* flex: display: flex; */
+    display: flex;
+
+    /* items-center: align-items: center; */
+    align-items: center;
+
+    /* justify-between: justify-content: space-between; */
+    justify-content: space-between;
+
+    /* p-4: padding: 1rem; (16px) */
+    padding: 1rem;
+
+    /* bg-gray-700 (Asumido): background-color: #374151; */
+    background-color: #374151;
+
+    /* border-b: border-bottom-width: 1px; */
+    border-bottom-width: 1px;
+
+    /* border-b-solid (No es una utilidad estándar de Tailwind, 
+       pero se entiende como 'border-style: solid;') */
+    border-bottom-style: solid;
+
+    /* border-gray-600 (Asumido): border-bottom-color: #4b5563; */
+    border-bottom-color: #4b5563;
+}
+
+.TODO1{
+    padding-left: 0.75rem;
+}
