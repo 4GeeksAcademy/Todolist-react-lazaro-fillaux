@@ -1,28 +1,55 @@
 import React from "react";
-
-//include images into your bundle
 import rigoImage from "../../img/rigo-baby.jpg";
+import "../../styles/index.css"
+import { useState } from "react";
 
-import TÍTULO from "./TÍTULO";
-import TODOINPUT from "./TODOINPUT";
-import TODOLIST from "./TODOLIST";
-import TODO from "./TODO";
 
-//create your first component
 const Home = () => {
+	const [tareas, setTareas] = useState([])
+	const [imputValue, setImputValue] = useState("")
+
+	function añadirTarea() {
+		setTareas([...tareas, imputValue]);
+	}
+
+	function quitarTarea(index) {
+		setTareas(tareas.filter((_, i) => i !== index));
+
+	}
+
+
+
+
+
 	return (
 		<div className="todo">
 			<div className="todo1">
-				<TÍTULO/>
-				<TODOINPUT/>
-				<TODOLIST>
-					<h2>Todos list</h2>
-				</TODOLIST>
+				<h1 id="tit"><bold>TODO</bold></h1>
+				<input
+					type="text"
+					className="TODOINPUT"
+					placeholder="Que tienes en mente ..."
+					onChange={(event) => setImputValue(event.target.value)}
+					onKeyDown={(event) => {
+						if (event.key === "Enter") {
+							añadirTarea();
+						}
+					}}
+				/>
+				<ul>
+					{tareas.map((tarea, index) => (
+						<li key={index}>
+							{tarea}
+							<button onClick={() => quitarTarea(index)} className = "cruz">❌</button>
+						</li>
+					))}
+					<p>hay {tareas.length} tareas</p>
+				</ul>
 			</div>
 		</div>
-	
-	
-	
+
+
+
 	);
 };
 
